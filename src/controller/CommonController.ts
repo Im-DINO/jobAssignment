@@ -8,7 +8,7 @@ class CommonController {
     }
    
     public intializeRoutes() {
-        this.router.get('/test', this.testController);
+        this.router.get('/test:ts', this.testController);
         this.router.get('/', this.getHome);
     }
     
@@ -18,6 +18,8 @@ class CommonController {
     }
    
     private testController = (req: Request, res: Response)  => {
+        console.log(req.query);
+
         res.status(200).send("Connected Test ").end();
       }
   }
